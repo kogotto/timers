@@ -2,12 +2,12 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include "ui_widget.h"
 
-namespace Ui {
-class Widget;
-}
 
-class Widget : public QWidget
+class Widget:
+        public QWidget,
+        private Ui::Widget
 {
     Q_OBJECT
 
@@ -16,7 +16,6 @@ public:
     ~Widget();
 
 private:
-    Ui::Widget *ui;
 };
 
 #endif // WIDGET_H
