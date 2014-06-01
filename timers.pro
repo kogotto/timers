@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        widget.cpp
+        widget.cpp \
+    timerreciver.cpp
 
-HEADERS  += widget.h
+HEADERS  += widget.h \
+    timerreciver.h
 
 FORMS    += widget.ui
