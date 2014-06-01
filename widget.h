@@ -20,6 +20,8 @@ public slots:
     void before();
     void after();
 
+    void buttonSlot();
+
 protected:
     virtual void paintEvent(QPaintEvent *);
 

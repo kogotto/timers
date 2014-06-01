@@ -2,6 +2,7 @@
 
 #include <QPainter>
 #include <QTimer>
+#include <QMessageBox>
 
 #include <iostream>
 using namespace std;
@@ -19,7 +20,15 @@ Widget::Widget(QWidget *parent) :
     connect(t, SIGNAL(timeout()),
             this, SLOT(after()));
 
-    t->start(1000);
+    connect(button, SIGNAL(clicked()),
+            this, SLOT(buttonSlot()));
+
+    t->start(100);
+
+    QTimer * t2 = new QTimer(this);
+    connect(t2, SIGNAL(timeout()),
+            this, SLOT(update()));
+    t2->start(10);
 }
 
 Widget::~Widget()
@@ -34,6 +43,11 @@ void Widget::before()
 void Widget::after()
 {
     cout << ":::::: after" << endl;
+}
+
+void Widget::buttonSlot()
+{
+    QMessageBox::about(this, "button", "message");
 }
 
 void Widget::paintEvent(QPaintEvent *)
