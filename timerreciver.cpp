@@ -26,7 +26,7 @@ TTimerReciver::TTimerReciver(QObject *parent) :
 {
 }
 
-const int N = 10000;
+const int N = 10;
 
 void TTimerReciver::heavySlot()
 {
